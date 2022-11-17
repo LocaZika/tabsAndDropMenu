@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  font-family: sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabs {
+  min-height: 10rem;
+  width: 100%;
+}
+.tabs .tabsName .tabBtn {
+  position: relative;
+  background-color: unset;
+  border: 1px solid #000;
+  border-bottom: none;
+  z-index: 10;
+}
+.tabs .tabsName .tabBtn::after {
+  content: " ";
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  height: 0.2rem;
+  left: 0;
+  bottom: 0;
+  transform: translateY(0);
+}
+.tabs .tabsName .tabBtn:focus::after {
+  transform: translateY(50%);
+}
+.tabs .tabsContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  z-index: 0;
+}
+.tabs .tabsContainer .tabContent {
+  position: absolute;
+  height: 100%;
+  display: none;
+}
+
+.dropdownMenus {
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+}
+.dropdownMenus .dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdownMenus .dropdown .dropdownBtn {
+  background-color: rgb(16, 125, 197);
+  border: none;
+  padding: 1rem;
+  color: #fff;
+}
+.dropdownMenus .dropdown .dropdownItems {
+  position: absolute;
+  max-height: 0;
+  transition: max-height linear 0.5s;
+  overflow: hidden;
+  background-color: rgb(5, 179, 83);
+  width: 100%;
+}
+.dropdownMenus .dropdown .dropdownItems a {
+  display: block;
+}
+.dropdownMenus .dropdown .dropdownItems.active {
+  max-height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

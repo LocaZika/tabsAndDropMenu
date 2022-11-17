@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Tabs -->
+      <div class="tabs">
+        <div class="tabsName">
+          <button class="tabBtn" tabId="#tab1">tab1</button>
+          <button class="tabBtn" tabId="#tab2">tab2</button>
+          <button class="tabBtn" tabId="#tab3">tab3</button>
+        </div>
+        <div class="tabsContainer">
+          <div id="tab1" class="tabContent">
+            <h2>london</h2>
+            <p>abc</p>
+          </div>
+          <div id="tab2" class="tabContent">
+            <h2>paris</h2>
+            <p>xyz</p>
+          </div>
+          <div id="tab3" class="tabContent">
+            <h2>tokyo</h2>
+            <p>lkh</p>
+          </div>
+        </div>
+      </div>
+      <!-- Dropdown -->
+      <div class="dropdownMenus">
+        <div class="dropdown">
+          <button class="dropdownBtn" dropDownId="#dropMenu1">Dropdown1</button>
+          <div id="dropMenu1" class="dropdownItems active">
+            <a href="#">item1</a>
+            <a href="#">item2</a>
+            <a href="#">item3</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdownBtn" dropDownId="#dropMenu1">Dropdown2</button>
+          <div id="dropMenu2" class="dropdownItems">
+            <a href="#">item1</a>
+            <a href="#">item2</a>
+            <a href="#">item3</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdownBtn" dropDownId="#dropMenu1">Dropdown3</button>
+          <div id="dropMenu3" class="dropdownItems">
+            <a href="#">item1</a>
+            <a href="#">item2</a>
+            <a href="#">item3</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
