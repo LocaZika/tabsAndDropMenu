@@ -11,24 +11,50 @@ html{
 html, body{
   height: 100%;
 }
+button{
+  cursor: pointer;
+}
+h2, p, a, button{
+  &::first-letter{
+    text-transform: capitalize;
+  }
+}
 .container{
+  position: relative;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10rem;
 }
 // Tab
 .tabs{
   min-height: 10rem;
   width: 100%;
   .tabsName{
+    display: flex;
     .tabBtn{
       position: relative;
-      background-color: unset;
+      background-color: #fff;
       border: 1px solid #000;
       border-bottom: none;
       z-index: 10;
+      font-size: 1.6rem;
+      text-transform: capitalize;
+      padding: .5rem;
+      cursor: pointer;
+      &::before{
+        content: " ";
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #000;
+        border-bottom: none;
+        width: 50%;
+        height: .4rem;
+        bottom: 100%;
+        left: -1px;
+      }
       &::after{
         content: " ";
         position: absolute;
@@ -44,6 +70,9 @@ html, body{
           transform: translateY(50%);
         }
       }
+      &#newTabBtn{
+        padding: 0.5rem 1.5rem;
+      }
     }
   }
   .tabsContainer{
@@ -56,19 +85,79 @@ html, body{
       position: absolute;
       height: 100%;
       display: none;
+      padding: 1rem;
+      h2, p{
+        text-transform: capitalize;
+      }
+      h2{
+        font-size: 2.4rem;
+      }
+      p{
+        margin-top: 1rem;
+        font-size: 1.6rem;
+      }
     }
+  }
+}
+.addTabDialog{
+  background-color: rgba(0, 0, 0, .5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  transition: top 0.5s linear;
+  .formNewTab{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 30%;
+    text-align: center;
+    input[type="text"], textarea,.confirmBtns{
+      margin-top: 2rem;
+      font-size: 1.6rem;
+    }
+    input[type="text"], textarea, .confirmBtns > button{
+      padding: 1rem;
+    }
+    textarea{
+      resize: none;
+    }
+    .confirmBtns{
+      text-align: end;
+      button{
+        color: #fff;
+        border: none;
+        border-radius: .5rem;
+      }
+      #addTabBtn{
+        background-color: #5cb85c;
+      }
+      #closeTabBtn{
+        background-color: #d9534f;
+      }
+    }
+    
   }
 }
 // Dropdown Menu
 .dropdownMenus{
-  margin-top: 2rem;
+  margin-top: 5rem;
   padding: 1rem;
   width: 100%;
   .dropdown{
     display: inline-block;
     position: relative;
     .dropdownBtn{
-      background-color: rgb(16, 125, 197);
+      background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+      border-radius: .5rem;
       border: none;
       padding: 1rem;
       color: #fff;
@@ -82,9 +171,16 @@ html, body{
       width: 100%;
       a{
         display: block;
+        padding: 1rem;
+        font-size: 1.4rem;
+        color: #060c13;
+        text-decoration: none;
+        &:hover{
+          background-color: rgba($color: #fff, $alpha: .5);
+        }
       }
       &.active{
-        max-height: 100%;
+        max-height: 15rem;
       }
     }
   }

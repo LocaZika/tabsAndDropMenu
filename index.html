@@ -15,6 +15,7 @@
           <button class="tabBtn" tabId="#tab1">tab1</button>
           <button class="tabBtn" tabId="#tab2">tab2</button>
           <button class="tabBtn" tabId="#tab3">tab3</button>
+          <button id="newTabBtn" class="tabBtn" tabId="#tabNew">+</button>
         </div>
         <div class="tabsContainer">
           <div id="tab1" class="tabContent">
@@ -29,12 +30,30 @@
             <h2>tokyo</h2>
             <p>lkh</p>
           </div>
+          <div id="tabNew"></div>
+        </div>
+      </div>
+      <div class="addTabDialog">
+        <div class="formNewTab">
+          <h2>thêm tab mới</h2>
+          <input type="text" id="nameNewTab" placeholder="Tên tab mới" />
+          <input type="text" id="titleNewTab" placeholder="Tiêu đề tab mới" />
+          <textarea
+            id="contentNewTab"
+            cols="30"
+            rows="10"
+            placeholder="Nội dung tab mới..."
+          ></textarea>
+          <div class="confirmBtns">
+            <button id="addTabBtn">thêm tab mới</button>
+            <button id="closeTabBtn">thoát</button>
+          </div>
         </div>
       </div>
       <!-- Dropdown -->
       <div class="dropdownMenus">
         <div class="dropdown">
-          <button class="dropdownBtn" dropDownId="#dropMenu1">Dropdown1</button>
+          <button class="dropdownBtn" dropMenuId="#dropMenu1">Dropdown1</button>
           <div id="dropMenu1" class="dropdownItems active">
             <a href="#">item1</a>
             <a href="#">item2</a>
@@ -42,7 +61,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <button class="dropdownBtn" dropDownId="#dropMenu1">Dropdown2</button>
+          <button class="dropdownBtn" dropMenuId="#dropMenu2">Dropdown2</button>
           <div id="dropMenu2" class="dropdownItems">
             <a href="#">item1</a>
             <a href="#">item2</a>
@@ -50,7 +69,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <button class="dropdownBtn" dropDownId="#dropMenu1">Dropdown3</button>
+          <button class="dropdownBtn" dropMenuId="#dropMenu3">Dropdown3</button>
           <div id="dropMenu3" class="dropdownItems">
             <a href="#">item1</a>
             <a href="#">item2</a>

@@ -14,24 +14,52 @@ html, body {
   height: 100%;
 }
 
+button {
+  cursor: pointer;
+}
+
+h2::first-letter, p::first-letter, a::first-letter, button::first-letter {
+  text-transform: capitalize;
+}
+
 .container {
+  position: relative;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10rem;
 }
 
 .tabs {
   min-height: 10rem;
   width: 100%;
 }
+.tabs .tabsName {
+  display: flex;
+}
 .tabs .tabsName .tabBtn {
   position: relative;
-  background-color: unset;
+  background-color: #fff;
   border: 1px solid #000;
   border-bottom: none;
   z-index: 10;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.tabs .tabsName .tabBtn::before {
+  content: " ";
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-bottom: none;
+  width: 50%;
+  height: 0.4rem;
+  bottom: 100%;
+  left: -1px;
 }
 .tabs .tabsName .tabBtn::after {
   content: " ";
@@ -46,6 +74,9 @@ html, body {
 .tabs .tabsName .tabBtn:focus::after {
   transform: translateY(50%);
 }
+.tabs .tabsName .tabBtn#newTabBtn {
+  padding: 0.5rem 1.5rem;
+}
 .tabs .tabsContainer {
   position: relative;
   width: 100%;
@@ -57,10 +88,69 @@ html, body {
   position: absolute;
   height: 100%;
   display: none;
+  padding: 1rem;
+}
+.tabs .tabsContainer .tabContent h2, .tabs .tabsContainer .tabContent p {
+  text-transform: capitalize;
+}
+.tabs .tabsContainer .tabContent h2 {
+  font-size: 2.4rem;
+}
+.tabs .tabsContainer .tabContent p {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+.addTabDialog {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  transition: top 0.5s linear;
+}
+.addTabDialog .formNewTab {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 30%;
+  text-align: center;
+}
+.addTabDialog .formNewTab input[type=text], .addTabDialog .formNewTab textarea, .addTabDialog .formNewTab .confirmBtns {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+}
+.addTabDialog .formNewTab input[type=text], .addTabDialog .formNewTab textarea, .addTabDialog .formNewTab .confirmBtns > button {
+  padding: 1rem;
+}
+.addTabDialog .formNewTab textarea {
+  resize: none;
+}
+.addTabDialog .formNewTab .confirmBtns {
+  text-align: end;
+}
+.addTabDialog .formNewTab .confirmBtns button {
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+}
+.addTabDialog .formNewTab .confirmBtns #addTabBtn {
+  background-color: #5cb85c;
+}
+.addTabDialog .formNewTab .confirmBtns #closeTabBtn {
+  background-color: #d9534f;
 }
 
 .dropdownMenus {
-  margin-top: 2rem;
+  margin-top: 5rem;
   padding: 1rem;
   width: 100%;
 }
@@ -69,7 +159,8 @@ html, body {
   position: relative;
 }
 .dropdownMenus .dropdown .dropdownBtn {
-  background-color: rgb(16, 125, 197);
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border-radius: 0.5rem;
   border: none;
   padding: 1rem;
   color: #fff;
@@ -84,9 +175,16 @@ html, body {
 }
 .dropdownMenus .dropdown .dropdownItems a {
   display: block;
+  padding: 1rem;
+  font-size: 1.4rem;
+  color: #060c13;
+  text-decoration: none;
+}
+.dropdownMenus .dropdown .dropdownItems a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .dropdownMenus .dropdown .dropdownItems.active {
-  max-height: 100%;
+  max-height: 15rem;
 }
 
 /*# sourceMappingURL=style.css.map */
